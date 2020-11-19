@@ -40,11 +40,7 @@ export default {
     },
     methods: {
         toggleDropdown () {
-            if (this.dropdown) {
-                this.dropdown = false;
-            } else {
-                this.dropdown = true;
-            }
+            this.dropdown = !this.dropdown
         },
     },
     computed: {
