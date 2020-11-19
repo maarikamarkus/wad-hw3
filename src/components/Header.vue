@@ -10,10 +10,10 @@
                     <button type="button">Search</button>
                 </div>
                 <div class="avatar-container">
-                    <img class="avatar" />
+                    <img class="avatar" :src='user.avatar' :alt='user.firstname + " " + user.lastname'>
                     <div class="drop-down-container">
-                        <span id="user-name">John Doe</span>
-                        <span id="user-email"></span>
+                        <span id="user-name"> {{ user.firstname }} {{ user.lastname }} </span>
+                        <span id="user-email"> {{ user.email }} </span>
                         <span class="separator"></span>
                         <span>
                             <router-link to="/browse">Browse</router-link>
@@ -31,7 +31,18 @@
 
 <script>
 export default {
-    
+    name: 'Header',
+    data () {
+        return {}
+    },
+    computed: {
+        user () {
+            return this.$store.state.user;
+        },
+    },
+    mounted () {
+        this.$store.dispatch('getUser');
+    },
 }
 </script>
 
