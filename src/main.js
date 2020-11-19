@@ -5,14 +5,16 @@ import Vuex from 'vuex'
 import store from "./store"
 import Login from "@/components/Login"
 import Feed from "@/components/Feed"
+import Browse from "@/components/Browse"
 
 Vue.config.productionTip = false
 Vue.use(VueRouter)
 Vue.use(Vuex)
 
 const routes = [
+  {path: "/", component: Feed},
   {path: "/login", component: Login},
-  {path: "/feed", component: Feed}
+  {path: "/browse", component: Browse}
 ];
 
 const router = new VueRouter({

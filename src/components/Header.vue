@@ -66,7 +66,6 @@ nav div img {
     border-radius: 100%;
     object-fit: cover;
     object-position: top center;
-    text-align: center;
 }
 
 nav div.search-container > input {

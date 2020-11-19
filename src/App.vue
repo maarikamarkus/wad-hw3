@@ -1,13 +1,7 @@
 <template>
   <div id="app">
     <Header></Header>
-    <div>
-      <router-link to="/login">Log In</router-link>
-    </div>
-    <div>
-      <router-link to="/feed">Feed</router-link>
-    </div>
-    <router-view></router-view>
+    <router-view/>
   </div>
 </template>
 
@@ -25,10 +19,14 @@ export default {
 <style>
 #app {
   font-family: 'Roboto Slab', serif;
+  outline: none;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color: #2c3e50;
-  margin-top: 60px;
-  outline: none;
+  color: #263238;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #0277bd;
 }
 </style>
