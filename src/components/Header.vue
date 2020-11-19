@@ -6,9 +6,8 @@
                     <img src="../assets/logo.png" alt="postIt" />
                 </div>
                 <div class="search-container">
-                    <input type="text" name="search" /><button type="button">
-                        Search
-                    </button>
+                    <input type="text" name="search" />
+                    <button type="button">Search</button>
                 </div>
                 <div class="avatar-container">
                     <img class="avatar" />
@@ -67,6 +66,7 @@ nav div img {
     border-radius: 100%;
     object-fit: cover;
     object-position: top center;
+    text-align: center;
 }
 
 nav div.search-container > input {
@@ -85,6 +85,15 @@ nav div.search-container > button {
     padding: 5px;
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
+    color: #ffffff;
+    background-color: #01579b;
+    border: none;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
+nav div.search-container > button:hover {
+	box-shadow: 0 0 5px rgba(38, 50, 56, 0.7);
+	cursor: pointer;
 }
 
 nav div.avatar-container {
