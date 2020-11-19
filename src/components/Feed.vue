@@ -16,7 +16,7 @@
                     </video>
                 </div>
                 <div class="post-title">
-                    <h3> {{ post.title }} </h3>
+                    <h3> {{ post.text }} </h3>
                 </div>
                 <div class="post-actions">
                     <button type="button" class="like-button">
@@ -75,6 +75,7 @@ export default {
     float: left;
     position: relative;
     width: 50%;
+    text-align: left;
 }
 
 .post .post-author .post-author-info img {
@@ -89,7 +90,7 @@ export default {
 .post .post-author .post-author-info small {
     position: absolute;
     top: 10px;
-    left: 35px;
+    left: 40px;
 }
 
 .post .post-author .post-author-info + small {
@@ -107,6 +108,7 @@ export default {
 }
 
 .post .post-title {
+    text-align: left;
     padding: 10px;
 }
 
@@ -115,6 +117,7 @@ export default {
 }
 
 .post .post-title ~ .post-actions {
+    text-align: left;
     padding: 10px;
 }
 
