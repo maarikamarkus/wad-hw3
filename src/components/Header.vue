@@ -16,11 +16,11 @@
                         <span id="user-name"> {{ user.firstname }} {{ user.lastname }} </span>
                         <span id="user-email"> {{ user.email }} </span>
                         <span class="separator"></span>
-                        <span>
+                        <span @click="toggleDropdown">
                             <router-link to="/browse">Browse</router-link>
                         </span>
                         <span class="separator"></span>
-                        <span>
+                        <span @click="toggleDropdown">
                             <router-link to="/login">Log Out</router-link>
                         </span>
                     </div>
