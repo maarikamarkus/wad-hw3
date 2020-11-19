@@ -16,11 +16,11 @@
                         <span id="user-email"></span>
                         <span class="separator"></span>
                         <span>
-                            <a href="browse.html">Browse</a>
+                            <router-link to="/browse">Browse</router-link>
                         </span>
                         <span class="separator"></span>
                         <span>
-                            <a href="login.html">Log Out</a>
+                            <router-link to="/login">Log Out</router-link>
                         </span>
                     </div>
                 </div>
