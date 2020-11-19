@@ -4,8 +4,10 @@
     <div>
       <router-link to="/login">Log In</router-link>
     </div>
-    <div>
-      <router-link to="/feed">Feed</router-link>
+    <div class="main-container">
+      <div>
+        <router-link to="/feed">Feed</router-link>
+      </div>
     </div>
     <router-view></router-view>
   </div>
@@ -35,5 +37,13 @@ export default {
   width: 100%;
   height: 100%;
   background-color: #0277bd;
+}
+
+.main-container {
+    width: 50%;
+    min-height: 100%;
+    margin: auto auto;
+    padding: 90px 15px 15px 15px;
+    background-color: #ffffff;
 }
 </style>
