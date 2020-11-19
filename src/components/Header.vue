@@ -10,8 +10,9 @@
                     <button type="button">Search</button>
                 </div>
                 <div class="avatar-container">
-                    <img class="avatar" :src='user.avatar' :alt='user.firstname + " " + user.lastname'>
-                    <div class="drop-down-container">
+                    <img class="avatar" :src='user.avatar' :alt='user.firstname + " " + user.lastname'
+                        @click="toggleDropdown">
+                    <div v-if="dropdown" class="drop-down-container">
                         <span id="user-name"> {{ user.firstname }} {{ user.lastname }} </span>
                         <span id="user-email"> {{ user.email }} </span>
                         <span class="separator"></span>
@@ -33,7 +34,18 @@
 export default {
     name: 'Header',
     data () {
-        return {}
+        return {
+            dropdown: false,
+        }
+    },
+    methods: {
+        toggleDropdown () {
+            if (this.dropdown) {
+                this.dropdown = false;
+            } else {
+                this.dropdown = true;
+            }
+        },
     },
     computed: {
         user () {
