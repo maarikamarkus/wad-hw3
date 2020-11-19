@@ -1,9 +1,6 @@
 <template>
   <div id="app">
     <Header></Header>
-<<<<<<< HEAD
-    <router-view/>
-=======
     <div>
       <router-link to="/login">Log In</router-link>
     </div>
@@ -13,7 +10,6 @@
       </div>
     </div>
     <router-view></router-view>
->>>>>>> 9cceaf8 (solved merge conflict)
   </div>
 </template>
 
