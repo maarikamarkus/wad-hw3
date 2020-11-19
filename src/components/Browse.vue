@@ -4,7 +4,7 @@
             <div class="profile">
                 <img :src="user.avatar" :alt="user.firstname + ' ' + user.lastname">
                 <h2> {{ user.firstname }} {{ user.lastname }} </h2>
-                <button class="follow-button">Follow</button>
+                <button class="follow-button" :id="user.id" @click="toggleFollow(user.id)">Follow</button>
             </div>
         </div>
     </section>
@@ -17,7 +17,15 @@ export default {
         return {}
     },
     methods: {
-
+        toggleFollow(id) {
+            let el = document.getElementById(id);
+            if (el.innerHTML == "Follow") {
+                el.innerHTML = "Followed"
+            } else {
+                el.innerHTML = "Follow"
+            }
+            el.classList.toggle("followed");
+        }
     },
     computed: {
         users () {
