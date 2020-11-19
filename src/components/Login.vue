@@ -36,8 +36,6 @@
 </template>
 
 <script>
-//import axios from 'axios'
-
 export default {
     
 }
@@ -47,9 +45,12 @@ export default {
 .login-page {
     width: 100%;
     height: 100%;
+    min-height: 100%;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: center;    
+    margin: auto auto;
+    padding: 90px 15px 15px 15px;
 }
 
 #login-container {
