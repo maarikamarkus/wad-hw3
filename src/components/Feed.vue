@@ -5,7 +5,7 @@
                 <span class="post-author">
                     <span class="post-author-info">
                         <img :src='post.author.avatar' :alt='post.author.firstname + " " + post.author.lastname'>
-                        <small> {{ post.author.firstname }} {{ post.author.lastname }} </small>
+                        <small> {{ post.author.firstname | uppercase }} {{ post.author.lastname | uppercase }} </small>
                     </span>
                     <small> {{ post.createTime }} </small>
                 </span>
@@ -47,6 +47,12 @@ export default {
     },
     mounted () {
         this.$store.dispatch('getPosts');
+    },
+    filters: {
+        uppercase (value) {
+            if (!value) return '';
+            return value.toString().toUpperCase();
+        },
     },
 }
 </script>

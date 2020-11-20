@@ -21,6 +21,7 @@ body {
   margin: 0;
   background-color: #0277bd;
 }
+
 #app {
   font-family: 'Roboto Slab', serif;
   outline: none;
