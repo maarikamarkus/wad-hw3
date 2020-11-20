@@ -3,6 +3,7 @@ import axios from 'axios'
 const state = {
     posts: [],
     users: [],
+    user: {},
 };
 
 const getters = {
@@ -21,6 +22,12 @@ const actions = {
         .then(response => {
             commit('SET_USERS', response.data)
         });
+    },
+    getUser({ commit }) {
+        axios.get('https://private-517bb-wad20postit.apiary-mock.com/users/1')
+        .then(response => {
+            commit('SET_USER', response.data)
+        });
     }
 };
 
@@ -29,7 +36,10 @@ const mutations = {
         state.posts = posts;
     },
     SET_USERS(state, users) {
-        state.users = users
+        state.users = users;
+    },
+    SET_USER(state, user) {
+        state.user = user;
     }
 };
 

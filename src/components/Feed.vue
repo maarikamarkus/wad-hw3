@@ -19,7 +19,7 @@
                     <h3> {{ post.text }} </h3>
                 </div>
                 <div class="post-actions">
-                    <button type="button" class="like-button">
+                    <button type="button" class="like-button" :id="post.id" @click="toggleLike(post.id)">
                         {{ post.likes }}
                     </button>
                 </div>
@@ -33,6 +33,12 @@ export default {
     name: 'Feed',
     data () {
         return {}
+    },
+    methods: {
+        toggleLike (id) {
+            let element = document.getElementById(id);
+            element.classList.toggle("liked");
+        },
     },
     computed: {
         posts () {
@@ -133,9 +139,11 @@ export default {
     line-height: 10px;
     text-align: left;
     border: none;
+    border-radius: 3px;
 }
 
 .like-button.liked {
     background-color: #01579b;
+    border-radius: 3px;
 }
 </style>

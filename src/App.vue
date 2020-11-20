@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <Header></Header>
-    <router-view/>
+    <router-view></router-view>
   </div>
 </template>
 
@@ -30,5 +30,29 @@ export default {
   background-color: #0277bd;
 }
 
+<<<<<<< HEAD
 
+=======
+.main-container {
+    width: 50%;
+    min-height: 100%;
+    margin: auto auto;
+    padding: 90px 15px 15px 15px;
+    background-color: #ffffff;
+}
+
+button {
+    padding: 8px 16px;
+    margin: 4px 0;
+    color: #ffffff;
+    background-color: #01579b;
+    border: none;
+    border-radius: 4px;
+}
+
+button:hover {
+    box-shadow: 0 0 5px rgba(38, 50, 56, 0.7);
+    cursor: pointer;
+}
+>>>>>>> e382d35490dbf885d1e422e93098d6acef686b2c
 </style>

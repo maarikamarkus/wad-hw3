@@ -10,16 +10,17 @@
                     <button type="button">Search</button>
                 </div>
                 <div class="avatar-container">
-                    <img class="avatar" />
-                    <div class="drop-down-container">
-                        <span id="user-name">John Doe</span>
-                        <span id="user-email"></span>
+                    <img class="avatar" :src='user.avatar' :alt='user.firstname + " " + user.lastname'
+                        @click="toggleDropdown">
+                    <div v-if="dropdown" class="drop-down-container">
+                        <span id="user-name"> {{ user.firstname }} {{ user.lastname }} </span>
+                        <span id="user-email"> {{ user.email }} </span>
                         <span class="separator"></span>
-                        <span>
+                        <span @click="toggleDropdown">
                             <router-link to="/browse">Browse</router-link>
                         </span>
                         <span class="separator"></span>
-                        <span>
+                        <span @click="toggleDropdown">
                             <router-link to="/login">Log Out</router-link>
                         </span>
                     </div>
@@ -31,7 +32,25 @@
 
 <script>
 export default {
-    
+    name: 'Header',
+    data () {
+        return {
+            dropdown: false,
+        }
+    },
+    methods: {
+        toggleDropdown () {
+            this.dropdown = !this.dropdown
+        },
+    },
+    computed: {
+        user () {
+            return this.$store.state.user;
+        },
+    },
+    mounted () {
+        this.$store.dispatch('getUser');
+    },
 }
 </script>
 
@@ -98,5 +117,23 @@ nav div.search-container > button:hover {
 nav div.avatar-container {
     margin-right: 15px;
     text-align: right;
+}
+
+.drop-down-container {
+    position: absolute;
+    min-width: 150px;
+    height: auto;
+    background-color: #ffffff;
+    padding: 10px;
+    right: 0;
+    top: 50px;
+    text-align: left;
+}
+.drop-down-container span{
+    display: block;
+}
+.drop-down-container span.separator{
+    border-bottom: 1px solid #d7d7d7;
+    margin: 10px -10px;
 }
 </style>
