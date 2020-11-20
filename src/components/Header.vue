@@ -1,33 +1,31 @@
 <template>
-    <div>
-        <header>
-            <nav>
-                <div class="logo-container">
-                    <img src="../assets/logo.png" alt="postIt" />
+    <header v-if="notLoginPage()">
+        <nav>
+            <div class="logo-container">
+                <img src="../assets/logo.png" alt="postIt" />
+            </div>
+            <div class="search-container">
+                <input type="text" name="search" />
+                <button type="button">Search</button>
+            </div>
+            <div class="avatar-container">
+                <img class="avatar" :src='user.avatar' :alt='user.firstname + " " + user.lastname'
+                    @click="toggleDropdown">
+                <div v-if="dropdown" class="drop-down-container">
+                    <span id="user-name"> {{ user.firstname }} {{ user.lastname }} </span>
+                    <span id="user-email"> {{ user.email }} </span>
+                    <span class="separator"></span>
+                    <span @click="toggleDropdown">
+                        <router-link to="/browse">Browse</router-link>
+                    </span>
+                    <span class="separator"></span>
+                    <span @click="toggleDropdown">
+                        <router-link to="/login">Log Out</router-link>
+                    </span>
                 </div>
-                <div class="search-container">
-                    <input type="text" name="search" />
-                    <button type="button">Search</button>
-                </div>
-                <div class="avatar-container">
-                    <img class="avatar" :src='user.avatar' :alt='user.firstname + " " + user.lastname'
-                        @click="toggleDropdown">
-                    <div v-if="dropdown" class="drop-down-container">
-                        <span id="user-name"> {{ user.firstname }} {{ user.lastname }} </span>
-                        <span id="user-email"> {{ user.email }} </span>
-                        <span class="separator"></span>
-                        <span @click="toggleDropdown">
-                            <router-link to="/browse">Browse</router-link>
-                        </span>
-                        <span class="separator"></span>
-                        <span @click="toggleDropdown">
-                            <router-link to="/login">Log Out</router-link>
-                        </span>
-                    </div>
-                </div>
-            </nav>
-        </header>
-    </div>
+            </div>
+        </nav>
+    </header>
 </template>
 
 <script>
@@ -42,6 +40,14 @@ export default {
         toggleDropdown () {
             this.dropdown = !this.dropdown
         },
+        notLoginPage() {
+            if (this.$route.path != "/login"){
+                return true
+            }
+            else {
+                return false
+            }
+        }
     },
     computed: {
         user () {
@@ -52,6 +58,7 @@ export default {
         this.$store.dispatch('getUser');
     },
 }
+
 </script>
 
 <style scoped>

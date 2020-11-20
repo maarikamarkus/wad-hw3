@@ -1,5 +1,5 @@
 <template>
-    <section class="login-page">
+    <div class="login-page">
         <section id="login-container">
             <div>
                 <h1>Welcome to postIt!</h1>
@@ -32,7 +32,7 @@
                 </form>
             </div>
         </section>
-    </section>
+    </div>
 </template>
 
 <script>
