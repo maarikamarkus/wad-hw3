@@ -11,7 +11,7 @@ import Header from './components/Header'
 export default {
   name: 'App',
   components: {
-    Header,
+    Header
   }
 }
 </script>
@@ -30,11 +30,5 @@ export default {
   background-color: #0277bd;
 }
 
-.main-container {
-    width: 50%;
-    min-height: 100%;
-    margin: auto auto;
-    padding: 90px 15px 15px 15px;
-    background-color: #ffffff;
-}
+
 </style>
