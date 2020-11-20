@@ -1,11 +1,9 @@
 <template>
     <section class="main-container">
-        <div v-for="user in users" :key="user.id">
-            <div class="profile">
-                <img :src="user.avatar" :alt="user.firstname + ' ' + user.lastname">
-                <h2> {{ user.firstname }} {{ user.lastname }} </h2>
-                <button class="follow-button" :id="user.id" @click="toggleFollow(user.id)">Follow</button>
-            </div>
+        <div class="profile" v-for="user in users" :key="user.id">
+            <img :src="user.avatar" :alt="user.firstname + ' ' + user.lastname">
+            <h4> {{ user.firstname }} {{ user.lastname }} </h4>
+            <button class="follow-button" :id="user.id" @click="toggleFollow(user.id)">Follow</button>
         </div>
     </section>
 </template>
@@ -39,13 +37,26 @@ export default {
 </script>
 
 <style scoped>
+
+.main-container {
+    display: flex;
+    width: 50%;
+    min-height: 100%;
+    margin: auto auto;
+    padding: 90px 15px 15px 15px;
+    background-color: #ffffff;
+    flex-flow: row wrap;
+}
+
 .profile {
-    width: 45%;
-    display: inline-block;
+    width: 40%;
+    max-width: 300px;
+    display: flex;
     border: 1px solid #dedede;
     border-radius: 5px;
-    text-align: center;
-    margin: 1%;
+    align-items: center;
+    flex-direction: column;
+    margin: 15px auto;
 }
 
 .profile img {

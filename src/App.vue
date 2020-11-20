@@ -31,15 +31,6 @@ body {
   padding: 0;
   width: 100%;
   height: 100%;
-  
-}
-
-.main-container {
-    width: 50%;
-    min-height: 100%;
-    margin-top: 30px;
-    padding: 90px 15px 15px 15px;
-    background-color: #ffffff;
 }
 
 button {
