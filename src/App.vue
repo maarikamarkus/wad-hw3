@@ -30,9 +30,6 @@ export default {
   background-color: #0277bd;
 }
 
-<<<<<<< HEAD
-
-=======
 .main-container {
     width: 50%;
     min-height: 100%;
@@ -54,5 +51,4 @@ button:hover {
     box-shadow: 0 0 5px rgba(38, 50, 56, 0.7);
     cursor: pointer;
 }
->>>>>>> e382d35490dbf885d1e422e93098d6acef686b2c
 </style>
