@@ -2,13 +2,13 @@
     <div class="container">
         <div v-for='post in posts' :key='post.id'>
             <div class="post">
-                <span class="post-author">
+                <div class="post-author">
                     <span class="post-author-info">
                         <img :src='post.author.avatar' :alt='post.author.firstname + " " + post.author.lastname'>
                         <small> {{ post.author.firstname | uppercase }} {{ post.author.lastname | uppercase }} </small>
                     </span>
                     <small> {{ post.createTime }} </small>
-                </span>
+                </div>
                 <div v-if="post.media != null" class="post-image">
                     <img v-if="post.media.type == 'image'" :src="post.media.url" :alt="post.text">
                     <video v-else-if="post.media.type == 'video'" controls>
