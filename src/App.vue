@@ -17,6 +17,10 @@ export default {
 </script>
 
 <style>
+body {
+  margin: 0;
+  background-color: #0277bd;
+}
 #app {
   font-family: 'Roboto Slab', serif;
   outline: none;
@@ -27,7 +31,7 @@ export default {
   padding: 0;
   width: 100%;
   height: 100%;
-  background-color: #0277bd;
+  
 }
 
 .main-container {
